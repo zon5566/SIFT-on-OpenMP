@@ -23,13 +23,13 @@ The bold rows are the ones we decided to parallelize, and we could see for all s
 
 * createPyramid(): Build the Scale-space octaves which each image within each of it is convolved with given specific sigma.
 
-* getExtrema(): From Difference of Gaussain images, extract points that comply to the maximum/minimum of 3*3*3 cube rule.
+* getExtrema(): From Difference of Gaussain images, extract points that comply to the maximum/minimum of 3x3x3 cube rule.
 
 * getOrientation(): For each keypoint location, calculate main orientation & magnitude (could be more than one) and bundle this information to build a new keypoint + orientation vector.
 
 * creatDoG(): For each Scale-space octaves, subtract all adjacent levels of image to form a Difference of Gaussain pyramid.
 
-* getDescriptor(): For each keypoint, correct features to 0 degree of orientation, and compute a 16*16 local region as 4*4 - 8 bin orientation histogram to a 128-dimension vector as its descriptor.
+* getDescriptor(): For each keypoint, correct features to 0 degree of orientation, and compute a 16*16 local region as 4x4 - 8 bin orientation histogram to a 128-dimension vector as its descriptor.
 
 ## Result
 Time cost versus number of threads and the speedup
