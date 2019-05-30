@@ -2,7 +2,7 @@
 
 SIFT is a feature detection algorithm that detects interest points in multiple scales of the image and represent each key point with a relative orientation histogram which make this feature descriptor scale-invariant and also orientation-invariant. Most of the parts in this pipeline can be parallelized, which is also our main goal of the optimization.
 
-In this project, we implemented a parallel version of the Scale-invariant Feature Transform (SIFT) [1] on OpenMP. The environment is Stempede2 from xsede.org.
+In this project, we implemented a parallel version of the [Scale-invariant Feature Transform](http://new.csd.uwo.ca/Courses/CS9840a/PossibleStudentPapers/iccv99.pdf) (SIFT) on OpenMP. The environment is Stempede2 from xsede.org.
 
 ## OpenMP Parallelization
 
@@ -32,3 +32,16 @@ The bold rows are the ones we decided to parallelize, and we could see for all s
 * getDescriptor(): For each keypoint, correct features to 0 degree of orientation, and compute a 16*16 local region as 4*4 - 8 bin orientation histogram to a 128-dimension vector as its descriptor.
 
 ## Result
+Time cost versus number of threads and the speedup
+
+<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/time_700x542.png" width="400"><img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/time_1850x1280.png" width="400">
+<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/time_6000x4000.png" width="400"><img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/speedup.png" width="400">
+
+keypoints result on the image (700 x 542)
+
+|<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/corgi.png" width="400">|<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/corgi_opencv.png" width="400">|
+| :---: | :---: |
+| Original image | OpenCV result |
+|<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/corgi_ours.png" width="400">|<img src="https://github.com/zon5566/SIFT-on-OpenMP/blob/master/image/corgi_readable.png" width="400">|
+| Ours | Ours (readable) |
+
