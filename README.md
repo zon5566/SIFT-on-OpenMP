@@ -4,6 +4,8 @@ SIFT is a feature detection algorithm that detects interest points in multiple s
 
 In this project, we implemented a parallel version of the [Scale-invariant Feature Transform](http://new.csd.uwo.ca/Courses/CS9840a/PossibleStudentPapers/iccv99.pdf) (SIFT) on OpenMP. The environment is Stempede2 from xsede.org.
 
+For more detailed works and analysis, please visit our [writing report](https://drive.google.com/file/d/1M_80JQCrcZF60oKN9WuyB4ZGpqj5yuvs/view?usp=sharing).
+
 ## Execution
 
 To run the program, run ```make``` to compile (using icpc) and generate the executable file ```sift```, which accepts two arguments:
